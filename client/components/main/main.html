@@ -1,0 +1,57 @@
+<div class="container">
+    <br>
+<div class="row">
+    <div class="col">
+        <div class="card border-primary mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Controls</h5>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="redactText">input the text to redact</label>
+                    <input id="redactText" class="form-control" ng-model="$ctrl.keys" />
+                    <small id="redactHelp" class="form-text text-muted">
+                        Enter words and phrases separated by spaces or commas. Phrases enclosed in single or double quotes
+                    </small>
+                </div>
+                <div class=" form-group form-check">
+                    <input id="case" type="checkbox" class="form-check-input" ng-model="$ctrl.caseSensitive" />
+                    <label for="case" class="form-check-label">Case Sensitive? </label>
+                </div>
+                <button class="btn btn-primary" ng-click="$ctrl.goIndexRedact()">REDACT THAT TEXT!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+    <div class="col-lg">
+        <div class="card border-primary mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Input the top secret text</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center">
+                <button class="btn btn-primary" ng-click="$ctrl.loadSampleText()">Load Sample Text</button>
+                </div>
+                <div class="form-group">
+                    <label for="inputText">Input text</label>
+                <textarea class="form-control" style="min-height: 500px;" id="inputText" ng-model="$ctrl.inputText"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg">
+        <div class="card border-primary mb-3">
+            <div class="card-header"><h5 class="card-title">Result</h5></div>
+        <div class="card-body">
+            <p class="card-text">
+                {{$ctrl.indexRedacted}}
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+</div>
